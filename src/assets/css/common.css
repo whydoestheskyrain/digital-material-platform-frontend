@@ -1,0 +1,252 @@
+/* 全局重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  height: 100%;
+  font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  background: #f0f2f5;
+}
+
+/* 容器通用类：居中、自适应宽度 */
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+}
+
+/* 页面包装器通用样式 */
+.page-wrapper {
+  min-height: 100vh;
+  padding: 40px 0;
+  background: linear-gradient(180deg, #f0f2f5 0%, #e8ecf0 100%);
+  position: relative;
+}
+
+.page-wrapper::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 20% 20%, rgba(102, 126, 234, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(118, 75, 162, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(102, 126, 234, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-wrapper > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* 表单包装器通用样式 */
+.form-wrapper {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* 图片自适应 */
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 全局按钮样式优化 */
+.el-button {
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.el-button--small {
+  font-size: 12px;
+  padding: 6px 14px;
+}
+
+.el-button--mini {
+  font-size: 11px;
+  padding: 4px 10px;
+}
+
+/* 按钮悬停效果 */
+.el-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.el-button:active {
+  transform: translateY(0);
+}
+
+/* 主按钮样式 */
+.el-button--primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.35);
+}
+
+.el-button--primary:hover {
+  background: linear-gradient(135deg, #7c8eea 0%, #8b5ba2 100%);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.45);
+}
+
+/* 成功按钮样式 */
+.el-button--success {
+  background: linear-gradient(135deg, #67c23a 0%, #85ce61 100%);
+  border: none;
+  box-shadow: 0 4px 12px rgba(103, 194, 58, 0.3);
+}
+
+/* 警告按钮样式 */
+.el-button--warning {
+  background: linear-gradient(135deg, #e6a23c 0%, #f0c78a 100%);
+  border: none;
+  box-shadow: 0 4px 12px rgba(230, 162, 60, 0.3);
+}
+
+/* 危险按钮样式 */
+.el-button--danger {
+  background: linear-gradient(135deg, #f56c6c 0%, #f89898 100%);
+  border: none;
+  box-shadow: 0 4px 12px rgba(245, 108, 108, 0.3);
+}
+
+/* 信息按钮样式 */
+.el-button--info {
+  background: linear-gradient(135deg, #909399 0%, #b4bccc 100%);
+  border: none;
+  box-shadow: 0 4px 12px rgba(144, 147, 153, 0.3);
+}
+
+/* 文字按钮样式 */
+.el-button--text {
+  color: #667eea;
+  padding: 10px 14px;
+}
+
+.el-button--text:hover {
+  color: #764ba2;
+  background: rgba(102, 126, 234, 0.1);
+}
+
+/* 导航栏按钮样式 */
+.navbar-button {
+  color: white !important;
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+.navbar-button:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.navbar-button--primary {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.navbar-button--danger {
+  background: linear-gradient(135deg, #f56c6c 0%, #f89898 100%) !important;
+  border-color: #f56c6c !important;
+}
+
+/* 导航栏响应式优化 */
+@media (max-width: 768px) {
+  .header-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .header-btns .el-button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+/* 表格按钮区域 */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.action-buttons .el-button {
+  font-size: 12px;
+  padding: 5px 12px;
+}
+
+/* 卡片样式 */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* 表格样式优化 */
+.data-table {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* 空状态样式 */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.empty-title {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.empty-desc {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 20px;
+}

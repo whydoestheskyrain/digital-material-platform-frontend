@@ -1,0 +1,23 @@
+# 依赖包
+node_modules/
+
+# 打包产物
+dist/
+
+# 环境配置（存放接口地址等私密配置）
+.env
+.env.production
+.env.development
+
+# IDE
+.idea/
+.vscode/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 日志
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
